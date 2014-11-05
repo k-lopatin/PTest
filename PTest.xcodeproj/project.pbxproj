@@ -19,6 +19,10 @@
 		B5D318361A0A6DB8002AF130 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D3181E1A0A6DB7002AF130 /* UIKit.framework */; };
 		B5D3183E1A0A6DB8002AF130 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5D3183C1A0A6DB8002AF130 /* InfoPlist.strings */; };
 		B5D318401A0A6DB8002AF130 /* PTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D3183F1A0A6DB8002AF130 /* PTestTests.m */; };
+		B5D318BC1A0A96B3002AF130 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5D318BB1A0A96B3002AF130 /* Storyboard.storyboard */; };
+		B5D318BF1A0A9774002AF130 /* PTLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D318BE1A0A9774002AF130 /* PTLoginViewController.m */; };
+		B5D318C41A0A9A0F002AF130 /* PTFacebookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D318C31A0A9A0F002AF130 /* PTFacebookManager.m */; };
+		B5D318C61A0A9ED4002AF130 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D318C51A0A9ED4002AF130 /* FacebookSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,12 @@
 		B5D3183B1A0A6DB8002AF130 /* PTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PTestTests-Info.plist"; sourceTree = "<group>"; };
 		B5D3183D1A0A6DB8002AF130 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B5D3183F1A0A6DB8002AF130 /* PTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTestTests.m; sourceTree = "<group>"; };
+		B5D318BB1A0A96B3002AF130 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		B5D318BD1A0A9774002AF130 /* PTLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTLoginViewController.h; sourceTree = "<group>"; };
+		B5D318BE1A0A9774002AF130 /* PTLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTLoginViewController.m; sourceTree = "<group>"; };
+		B5D318C21A0A9A0F002AF130 /* PTFacebookManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTFacebookManager.h; path = Facebook/PTFacebookManager.h; sourceTree = "<group>"; };
+		B5D318C31A0A9A0F002AF130 /* PTFacebookManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTFacebookManager.m; path = Facebook/PTFacebookManager.m; sourceTree = "<group>"; };
+		B5D318C51A0A9ED4002AF130 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +66,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5D3181D1A0A6DB7002AF130 /* CoreGraphics.framework in Frameworks */,
+				B5D318C61A0A9ED4002AF130 /* FacebookSDK.framework in Frameworks */,
 				B5D3181F1A0A6DB7002AF130 /* UIKit.framework in Frameworks */,
 				B5D3181B1A0A6DB7002AF130 /* Foundation.framework in Frameworks */,
 			);
@@ -81,6 +92,7 @@
 				B5D318391A0A6DB8002AF130 /* PTestTests */,
 				B5D318191A0A6DB7002AF130 /* Frameworks */,
 				B5D318181A0A6DB7002AF130 /* Products */,
+				B5D3184E1A0A9103002AF130 /* 3rdParty */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +108,7 @@
 		B5D318191A0A6DB7002AF130 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B5D318C51A0A9ED4002AF130 /* FacebookSDK.framework */,
 				B5D3181A1A0A6DB7002AF130 /* Foundation.framework */,
 				B5D3181C1A0A6DB7002AF130 /* CoreGraphics.framework */,
 				B5D3181E1A0A6DB7002AF130 /* UIKit.framework */,
@@ -107,6 +120,7 @@
 		B5D318201A0A6DB7002AF130 /* PTest */ = {
 			isa = PBXGroup;
 			children = (
+				B5D318491A0A90CE002AF130 /* Sourses */,
 				B5D318291A0A6DB7002AF130 /* PTAppDelegate.h */,
 				B5D3182A1A0A6DB7002AF130 /* PTAppDelegate.m */,
 				B5D3182C1A0A6DB7002AF130 /* Images.xcassets */,
@@ -142,6 +156,73 @@
 				B5D3183C1A0A6DB8002AF130 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B5D318491A0A90CE002AF130 /* Sourses */ = {
+			isa = PBXGroup;
+			children = (
+				B5D318C01A0A99BC002AF130 /* Social */,
+				B5D3184A1A0A90CE002AF130 /* CORE */,
+				B5D3184B1A0A90CE002AF130 /* GUI */,
+			);
+			path = Sourses;
+			sourceTree = "<group>";
+		};
+		B5D3184A1A0A90CE002AF130 /* CORE */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CORE;
+			sourceTree = "<group>";
+		};
+		B5D3184B1A0A90CE002AF130 /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				B5D3184C1A0A90CE002AF130 /* Controllers */,
+				B5D3184D1A0A90CE002AF130 /* Views */,
+				B5D318BB1A0A96B3002AF130 /* Storyboard.storyboard */,
+			);
+			path = GUI;
+			sourceTree = "<group>";
+		};
+		B5D3184C1A0A90CE002AF130 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B5D318BD1A0A9774002AF130 /* PTLoginViewController.h */,
+				B5D318BE1A0A9774002AF130 /* PTLoginViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B5D3184D1A0A90CE002AF130 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B5D3184E1A0A9103002AF130 /* 3rdParty */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = 3rdParty;
+			sourceTree = "<group>";
+		};
+		B5D318C01A0A99BC002AF130 /* Social */ = {
+			isa = PBXGroup;
+			children = (
+				B5D318C11A0A99BC002AF130 /* Facebook */,
+				B5D318C21A0A9A0F002AF130 /* PTFacebookManager.h */,
+				B5D318C31A0A9A0F002AF130 /* PTFacebookManager.m */,
+			);
+			path = Social;
+			sourceTree = "<group>";
+		};
+		B5D318C11A0A99BC002AF130 /* Facebook */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Facebook;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +303,7 @@
 			files = (
 				B5D318251A0A6DB7002AF130 /* InfoPlist.strings in Resources */,
 				B5D3182D1A0A6DB7002AF130 /* Images.xcassets in Resources */,
+				B5D318BC1A0A96B3002AF130 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +322,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5D318C41A0A9A0F002AF130 /* PTFacebookManager.m in Sources */,
+				B5D318BF1A0A9774002AF130 /* PTLoginViewController.m in Sources */,
 				B5D3182B1A0A6DB7002AF130 /* PTAppDelegate.m in Sources */,
 				B5D318271A0A6DB7002AF130 /* main.m in Sources */,
 			);
@@ -358,6 +442,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/konstantin/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PTest/PTest-Prefix.pch";
 				INFOPLIST_FILE = "PTest/PTest-Info.plist";
@@ -371,6 +459,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/konstantin/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PTest/PTest-Prefix.pch";
 				INFOPLIST_FILE = "PTest/PTest-Info.plist";

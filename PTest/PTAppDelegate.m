@@ -7,16 +7,14 @@
 //
 
 #import "PTAppDelegate.h"
+#import <FacebookSDK/FacebookSDK.h>
 
 @implementation PTAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
-    return YES;
+  [FBLoginView class];
+   return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
