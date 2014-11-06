@@ -20,6 +20,39 @@
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.head-system.PTest</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.head-system.PTest</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>fb1487983428131715</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb1487983428131715</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>vk4622046</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>vk4622046</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>FacebookAppID</key>

@@ -9,7 +9,12 @@
 #import "PTLoginViewController.h"
 #import "PTAppDelegate.h"
 
-#import "PTFacebookManager.h"
+//#import "PTFacebookDelegate.h"
+#import <GoogleOpenSource/GoogleOpenSource.h>
+
+//#import "VKSdk.h"
+
+#define GPP_CLIENT_ID @"437683090487-io1mgi243srfg0ukl7gf3oonvho74a5b.apps.googleusercontent.com"
 
 @interface PTLoginViewController ()
 
@@ -29,14 +34,29 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.facebookLoginButton.delegate = self;
     
+    [self setFacebookLoginDelegate];
+    [self setGooglePlusLoginDelegate];
     
-    
-//    FBLoginView *loginView = [[FBLoginView alloc] init];
-//    [self.view addSubview:loginView];
 
     // Do any additional setup after loading the view.
+}
+
+- (void) setFacebookLoginDelegate
+{
+    //PTFacebookDelegate *facebookDelegate = [PTFacebookDelegate new];
+    self.facebookLoginButton.delegate = self;
+}
+- (void) setGooglePlusLoginDelegate {
+    GPPSignIn *signIn = [GPPSignIn sharedInstance];
+    // Вы уже задали kClientID на этапе инициализации клиента Google+
+    signIn.clientID = GPP_CLIENT_ID;
+    signIn.shouldFetchGoogleUserEmail = YES;
+    
+    signIn.scopes = [NSArray arrayWithObjects:
+                     kGTLAuthScopePlusLogin, // определяется в файле GTLPlusConstants.h
+                     nil];
+    signIn.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,6 +67,34 @@
 
 - (void)loginViewFetchedUserInfo:(FBLoginView *)loginView
                             user:(id<FBGraphUser>)user {
+    NSLog(@"test");
+}
+
+#pragma mark google plus login
+- (void)finishedWithAuth: (GTMOAuth2Authentication *)auth
+                   error: (NSError *) error
+{
+    if(!error) {
+        // Получим адрес электронной почты.
+        GPPSignIn *signIn = [GPPSignIn sharedInstance];
+        NSLog(@"%@", signIn.authentication.userEmail);
+        NSLog(@"test");
+    }
+    
+    NSLog(@"Received error %@ and auth object %@",error, auth);
+}
+
+- (void)disconnect {
+    [[GPPSignIn sharedInstance] disconnect];
+}
+
+- (void)didDisconnectWithError:(NSError *)error {
+    if (error) {
+        NSLog(@"Received error %@", error);
+    } else {
+        // Пользователь вышел и отключился.
+        // Удалим данные пользователя в соответствии с Условиями использования Google+.
+    }
 }
 
 /*
@@ -60,4 +108,9 @@
 }
 */
 
+- (IBAction)gpSignInButtonClicked:(id)sender {
+}
+- (IBAction)signOutButtonClicked:(id)sender {
+     [[GPPSignIn sharedInstance] signOut];
+}
 @end

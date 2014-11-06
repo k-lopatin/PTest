@@ -8,6 +8,7 @@
 
 #import "PTAppDelegate.h"
 #import <FacebookSDK/FacebookSDK.h>
+#import <GooglePlus/GooglePlus.h>
 
 @implementation PTAppDelegate
 
@@ -41,7 +42,31 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
+    
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    
+    BOOL wasHandled;
+    
+    if([[url scheme] caseInsensitiveCompare:@"fb1487983428131715"] == NSOrderedSame){
+        // Call FBAppCall's handleOpenURL:sourceApplication to handle Facebook app responses
+         wasHandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+        
+        // You can add your app-specific url handling code here if needed
+        
+        
+    } else if ([[url scheme] caseInsensitiveCompare:@"com.head-system.PTest"] == NSOrderedSame) {
+        wasHandled = [GPPURLHandler handleURL:url
+                            sourceApplication:sourceApplication
+                                   annotation:annotation];
+    }
+    
+    return wasHandled;
 }
 
 @end

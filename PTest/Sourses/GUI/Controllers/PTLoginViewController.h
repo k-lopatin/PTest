@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
+#import <GooglePlus/GooglePlus.h>
 
-@interface PTLoginViewController : UIViewController <FBLoginViewDelegate>
+@interface PTLoginViewController : UIViewController <FBLoginViewDelegate, GPPSignInDelegate>
 
 @property (weak, nonatomic) IBOutlet FBLoginView *facebookLoginButton;
+
+@property (weak, nonatomic) IBOutlet GPPSignInButton *gppSignInButton;
+
+- (IBAction)signOutButtonClicked:(id)sender;
 
 @end
