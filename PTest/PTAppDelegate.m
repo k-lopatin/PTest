@@ -7,6 +7,7 @@
 //
 
 #import "PTAppDelegate.h"
+#import "VKSdk.h"
 #import <FacebookSDK/FacebookSDK.h>
 #import <GooglePlus/GooglePlus.h>
 
@@ -64,6 +65,8 @@
         wasHandled = [GPPURLHandler handleURL:url
                             sourceApplication:sourceApplication
                                    annotation:annotation];
+    } else if ([[url scheme] caseInsensitiveCompare:@"vk4622046"] == NSOrderedSame) {
+        wasHandled = [VKSdk processOpenURL:url fromApplication:sourceApplication];
     }
     
     return wasHandled;

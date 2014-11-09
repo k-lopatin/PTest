@@ -1,5 +1,5 @@
 //
-//  PTFacebookDelegate.h
+//  PTFacebookManager.h
 //  PTest
 //
 //  Created by Константин on 06.11.14.
@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <FacebookSDK/FacebookSDK.h>
 
-@interface PTFacebookDelegate : NSObject <FBLoginViewDelegate>
+@interface PTFacebookManager : NSObject <FBLoginViewDelegate>
 
 @end

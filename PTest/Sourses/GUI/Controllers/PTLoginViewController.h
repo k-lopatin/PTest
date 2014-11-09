@@ -9,13 +9,24 @@
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import <GooglePlus/GooglePlus.h>
+#import <VK-ios-sdk/VKSdk.h>
 
-@interface PTLoginViewController : UIViewController <FBLoginViewDelegate, GPPSignInDelegate>
+@class PTVkManager;
+@class PTGooglePManager;
+@class PTFacebookManager;
+
+@interface PTLoginViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet FBLoginView *facebookLoginButton;
-
 @property (weak, nonatomic) IBOutlet GPPSignInButton *gppSignInButton;
 
 - (IBAction)signOutButtonClicked:(id)sender;
+
+- (IBAction)vkSignInButtonClicked:(id)sender;
+
+//social managers delegates
+@property (strong, nonatomic) PTFacebookManager *facebookManager;
+@property (strong, nonatomic) PTGooglePManager *googleManager;
+@property (strong, nonatomic) PTVkManager *vkManager;
 
 @end
